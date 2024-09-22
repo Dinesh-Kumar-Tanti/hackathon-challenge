@@ -6,7 +6,7 @@ export default function Explore() {
     return (
         <>
             <SearchandFilterProvider>
-                <div>
+                <div className="min-h-[386px] bg-[#002A3B] flex flex-col ">
                 <Filters />
                 <SearchResults />
                 </div>
