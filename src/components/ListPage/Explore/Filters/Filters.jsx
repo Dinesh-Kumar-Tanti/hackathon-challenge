@@ -7,7 +7,7 @@ export default function Filters() {
     const { onSearchChange } = useContext(SearchAndFilterContext);
 
     return (
-        <div className="min-h-[386px] bg-[#002A3B]">
+        <div className="min-h-[386px] bg-[#b5642e]">
             <div>
                 <input type="search" placeholder="Search for events..." onChange={onSearchChange} />
             </div>
