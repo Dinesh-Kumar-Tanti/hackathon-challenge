@@ -47,7 +47,7 @@ export default function SelectFilters() {
                                             checked={filter.status.includes(eventFilter) ? true : false}
                                         />
                                         <label
-                                            className={filter.status.includes(eventFilter) ? 'rounded-md pr-20 pb-1 pl-2 text-[#858585]' : 'rounded-md pr-20 pb-1 pl-2 text-[#858585]'}
+                                            className={filter.status.includes(eventFilter) ? 'rounded-md pr-20 pb-1 pl-2 text-[#858585] capitalize' : 'rounded-md pr-20 pb-1 pl-2 text-[#858585] capitalize'}
                                             htmlFor={eventFilter}>
                                             {eventFilter}
                                         </label>
@@ -71,7 +71,7 @@ export default function SelectFilters() {
                                             checked={filter.level.includes(level) ? true : false}
                                         />
                                         <label
-                                            className={filter.level.includes(level) ? 'rounded-md pr-20 pb-1 pl-2 text-[#858585]' : 'rounded-md pr-20 pb-1 pl-2 text-[#858585]'}
+                                            className={filter.level.includes(level) ? 'rounded-md pr-20 pb-1 pl-2 text-[#858585] capitalize' : 'rounded-md pr-20 pb-1 pl-2 text-[#858585] capitalize'}
                                             htmlFor={level}>
                                             {level}
                                         </label>

@@ -24,9 +24,8 @@ const App = () => {
                     <Route path="" element={<Error />} />
                     <Route path=":challengeId" element={<ChallengeDetails />} />
                 </Route>
-        <Route path='*' element={<Error/>} />
+        <Route path='/*' element={<Error/>} />
       </Routes>
-      {/* <ChallengeDetails/> */}
       </BrowserRouter>
   )
 }
