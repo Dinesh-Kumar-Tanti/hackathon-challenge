@@ -16,8 +16,8 @@ export default function Filters() {
                         <input className="lg:w-[600px] h-[50px]  px-16 bg-white border-[1px] rounded-xl" type="search" placeholder="Search.." onChange={onSearchChange} />
                     </div>
                     <div className="flex  items-center h-[50px] ">
-                        <div className="mr-4 h-[50px] border-2 border-white px-4 py-3 bg-white rounded-xl"><SortFilter /></div>
-                        <div className="h-[50px] border-2 border-white px-4 py-3 bg-white rounded-xl"><SelectFilters /></div>
+                        <div><SortFilter /></div>
+                        <div><SelectFilters /></div>
                     </div>
                 </div>
             </div>
