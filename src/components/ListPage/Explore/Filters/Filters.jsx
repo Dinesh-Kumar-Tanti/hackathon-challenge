@@ -15,7 +15,7 @@ export default function Filters() {
                         <img className="w-4 absolute top-[18px] left-5 md:left-10 opacity-80 " src="/assets/icons/search.png" alt="" />
                         <input className=" w-[300px] lsm:w-[450px] lg:w-[600px] h-[50px] pl-10 lg:pl-16 pr-6 md:ml-5 md:mr-10 bg-white border-[1px] rounded-xl" type="search" placeholder="Search.." onChange={onSearchChange} />
                     </div>
-                    <div className="flex  items-center h-[50px] mx-auto ">
+                    <div className="flex  items-center h-[50px] mx-auto gap-5 md:gap-0 ">
                         <div><SortFilter /></div>
                         <div><SelectFilters /></div>
                     </div>

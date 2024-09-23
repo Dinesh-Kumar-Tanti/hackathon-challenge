@@ -12,7 +12,7 @@ export default function SelectFilters() {
 
     return (
         <div className="relative">
-            <button onClick={handleDropdownToggle} className="mr-4 h-[50px] border-2 border-white px-4 py-3 bg-white rounded-xl">Filters</button>
+            <button onClick={handleDropdownToggle} className="md:mr-4 h-[50px] border-2 border-white px-4 py-3 bg-white rounded-xl">Filters</button>
             {
                 isOpen ? (
                     <div className="absolute -left-[152px] xl:left-0 top-[60px] w-[230px] bg-white p-4 rounded-xl shadow-sm shadow-slate-100">
