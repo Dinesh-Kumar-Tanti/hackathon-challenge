@@ -15,7 +15,7 @@ export default function SortFilter() {
             <button onClick={handleDropdownToggle} className="mr-4 h-[50px] border-2 border-white px-4 py-3 bg-white rounded-xl">Sort By</button>
             {
                 isOpen ? (
-                    <div className="absolute -left-4 top-11 w-[85px] bg-white p-4 rounded-lg shadow-sm shadow-slate-100">
+                    <div className="absolute left-0 top-[60px] w-[85px] bg-white p-4 rounded-lg shadow-sm shadow-slate-100">
                         <div>
                             {
                                 SORT_FILTERS.map(sortFilter => (

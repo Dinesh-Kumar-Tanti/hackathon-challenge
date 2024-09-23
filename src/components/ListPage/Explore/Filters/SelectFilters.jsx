@@ -15,7 +15,7 @@ export default function SelectFilters() {
             <button onClick={handleDropdownToggle} className="mr-4 h-[50px] border-2 border-white px-4 py-3 bg-white rounded-xl">Filters</button>
             {
                 isOpen ? (
-                    <div className="absolute -left-4 top-11 w-[230px] bg-white p-4 rounded-xl shadow-sm shadow-slate-100">
+                    <div className="absolute -left-[152px] xl:left-0 top-[60px] w-[230px] bg-white p-4 rounded-xl shadow-sm shadow-slate-100">
                         <span className="text-[#666666]">Status</span>
                         <div>
                             <div>                                

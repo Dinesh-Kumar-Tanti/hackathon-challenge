@@ -100,7 +100,7 @@ const CreateChallange = () => {
     return (
         <div className='mb-10'>
             <div className='relative flex items-center pl-[50px] sm:pl-[90px] h-[107px] font-inter font-bold text-2xl leading-[29px] bg-[#F8F9FD]'>
-                Challenge Details <span className='absolute right-40'><Link to='/'><button className=' flex items-center gap-5 border-[2px] px-5 py-3 rounded-[10px] text-slate-600 text-xl hover:bg-slate-200'><img className='w-5 h-5' src="/assets/icons/arrow.png" alt="" />Go Back</button></Link></span>
+                Challenge Details <span className='absolute invisible sm:visible sm:right-10 md:right-24 xlg:right-40'><Link to='/'><button className=' flex items-center gap-5 border-[2px] px-5 py-3 rounded-[10px] text-slate-600 text-xl hover:bg-slate-200'><img className='w-5 h-5' src="/assets/icons/arrow.png" alt="" />Go Back</button></Link></span>
             </div>
             <div className='pl-[50px] sm:pl-[90px]  '>
                 <form onSubmit={handleSubmit} className='flex flex-col w-72 gap-2'>
