@@ -125,6 +125,7 @@ const CreateChallange = () => {
                                 type="date"
                                 placeholder='Add start date'
                                 name='startDate'
+                                min={currentDate}
                                 onChange={handleChange}
                                 value={input.startDate}
                                 required

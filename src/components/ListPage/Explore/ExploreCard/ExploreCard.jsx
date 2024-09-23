@@ -66,6 +66,12 @@ const ExploreCard = ({
     }
   }
 
+  const getBackgroundColor = () => {
+    if (isActive) return 'bg-[#44924C3D] text-[#44924C] ' 
+    if (isUpcoming) return 'bg-[#F2C94C40] text-[#666666]' 
+    if (isPast) return 'bg-[#FF3C002B] text-[#666666]'; 
+  };
+
   return (
     <div className='w-[354px] h-[473px] xlg:w-[354px] xlg:h-[473px] md:w-[500px] md:h-[600px] font-poppins rounded-[15px] bg-white'>
       {image && (
@@ -77,10 +83,10 @@ const ExploreCard = ({
       )}
 
       <div className='w-[246px] h-[247px] flex flex-col justify-between items-center mx-auto mt-6'>
-        <div className='bg-[#F2C94C40] font-inter text-xs leading-4 text-center font-normal rounded-[5px] px-3 py-1'>
+        <div className={`capitalize font-inter text-xs leading-4 text-center font-normal rounded-[5px] w-20 px-3 py-1 ${getBackgroundColor()}`}>
           {status}
         </div>
-        <h3 className='text-center font-semibold text-base leading-[26px]'>{name}</h3>
+        <h3 className='text-center capitalize font-semibold text-base leading-[26px]'>{name}</h3>
 
         {/* Dynamic text based on event status */}
         <p className='text-[#444444] font-medium leading-[14px] text-sm'>
@@ -121,3 +127,6 @@ const ExploreCard = ({
 };
 
 export default ExploreCard;
+
+
+
