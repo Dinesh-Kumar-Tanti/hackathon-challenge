@@ -15,18 +15,18 @@ export default function SortFilter() {
             <button onClick={handleDropdownToggle}>Sort By</button>
             {
                 isOpen ? (
-                    <div className="absolute">
+                    <div className="absolute -left-4 top-11 w-[85px] bg-white p-4 rounded-lg shadow-sm shadow-slate-100">
                         <div>
                             {
                                 SORT_FILTERS.map(sortFilter => (
                                     <div key={sortFilter}>
                                         <label 
-                                            className={filter.sortBy === sortFilter ? 'bg-lime-200' : undefined} 
+                                            className={filter.sortBy === sortFilter ? 'rounded-md pr-20 pb-1 pl-2 text-[#858585]' : 'rounded-md pr-20 pb-1 pl-2 text-[#858585]'} 
                                             htmlFor={sortFilter}>
                                             {sortFilter}
                                         </label>
                                         <input 
-                                            className="hidden"
+                                            className="hidden rounded-md pr-20 pb-1 pl-2 text-[#858585]"
                                             type="radio" 
                                             id={sortFilter} 
                                             name="sortBy" 
