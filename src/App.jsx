@@ -24,7 +24,7 @@ const App = () => {
                     <Route path="" element={<Error />} />
                     <Route path=":challengeId" element={<ChallengeDetails />} />
                 </Route>
-        <Route path='/*' element={<Error/>} />
+        <Route path='*' element={<Error/>} />
       </Routes>
       </BrowserRouter>
   )
@@ -32,11 +32,3 @@ const App = () => {
 
 export default App
 
-
-{/* <ExploreCard /> */}
-
-     {/* <SearchandFilterProvider>
-        <AppliedFilter />
-        <SearchResults />
-      </SearchandFilterProvider>
-      */}
