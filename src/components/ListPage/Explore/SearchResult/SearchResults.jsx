@@ -13,7 +13,7 @@ console.log(filteredChallenges)
                 filteredChallenges.map(challenge => <ExploreCard {...challenge} key={challenge.id} />)
             }
              {
-                !filteredChallenges?.length && <p className='xlg:absolute font-bold xlg:left-[443px] text-center text-3xl font-poppins text-white'>No events found.</p>
+                !filteredChallenges?.length && <p className='xlg:absolute font-bold xlg:left-[443px] xlg:top-10 text-center text-3xl font-poppins text-white '>No events found.</p>
             }
         </div>
         </div>
