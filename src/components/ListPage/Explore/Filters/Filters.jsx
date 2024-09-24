@@ -2,12 +2,13 @@ import { useContext } from "react"
 import { SearchAndFilterContext } from "../../../../context/SearchAndFilterContext";
 import SortFilter from "./SortFilter";
 import SelectFilters from "./SelectFilters";
+import Pillsfilters from "./Pillsfilters";
 
 export default function Filters() {
     const { onSearchChange } = useContext(SearchAndFilterContext);
 
     return (
-        <div className="bg-[#002A3B] h-[386px]">
+        <div className="bg-[#002A3B] h-[550px] lxsm:h-[500px] md:h-[420px] lg:h-[386px]">
             <div className="max-w-[900px] mx-auto flex flex-col items-center lg:block mt-20" >
                 <h1 className="text-center font-poppins font-semibold text-[28px] leading-[40px] text-white" >Explore Challenges</h1>
                 <div className="flex flex-col gap-5 md:flex-row sm:justify-between sm:items-center mt-16">
@@ -19,9 +20,17 @@ export default function Filters() {
                         <div><SortFilter /></div>
                         <div><SelectFilters /></div>
                     </div>
+
                 </div>
+
+                {/* filtered pill name with cross button */}
+                
+                    <Pillsfilters />
+                
+
+
             </div>
         </div>
-        
+
     )
 }

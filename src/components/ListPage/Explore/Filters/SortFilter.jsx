@@ -21,7 +21,7 @@ export default function SortFilter() {
                                 SORT_FILTERS.map(sortFilter => (
                                     <div key={sortFilter}>
                                         <label 
-                                            className={filter.sortBy === sortFilter ? 'rounded-md pr-20 pb-1 pl-2 text-[#858585]' : 'rounded-md pr-20 pb-1 pl-2 text-[#858585]'} 
+                                            className={filter.sortBy === sortFilter ? 'rounded-md pr-2 pb-1 pl-2 text-[#ffffff] bg-[#9c9b9b]' : 'rounded-md pr-2 pb-1 pl-2 text-[#858585]'} 
                                             htmlFor={sortFilter}>
                                             {sortFilter}
                                         </label>

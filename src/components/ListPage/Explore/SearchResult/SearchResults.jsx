@@ -8,7 +8,7 @@ console.log(filteredChallenges)
     return (
         
         <div className='bg-[#003145]'>            
-        <div className='xlg:relative py-20 flex flex-col items-center gap-10 xlg:max-w-[1158px] xlg:mx-auto xlg:gap-10 xlg:grid xlg:grid-cols-3 xlg:place-content-stretch'>
+        <div className='xlg:relative py-20 md:grid md:grid-cols-2 xlg:grid-cols-3 gap-10 md:max-w-[700px] xlg:max-w-[1170px] xlg:px-10 mx-auto '>
             {
                 filteredChallenges.map(challenge => <ExploreCard {...challenge} key={challenge.id} />)
             }

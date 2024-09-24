@@ -73,10 +73,10 @@ const ExploreCard = ({
   };
 
   return (
-    <div className='w-[354px] h-[473px] xlg:w-[354px] xlg:h-[473px] md:w-[500px] md:h-[600px] font-poppins rounded-[15px] bg-white'>
+    <div className='w-[300px] xxsm:w-[345px] h-[500px] md:w-[330px] font-poppins rounded-[15px] bg-white mx-auto mb-10'>
       {image && (
         <img
-          className="w-[354px] xlg:w-[354px] xlg:h-[174px] md:w-[500px] h-[174px] md:h-[300px] object-cover rounded-t-[8px]"
+          className="w-full h-[174px] object-cover rounded-t-[8px]"
           src={`data:image/png;base64, ${image}`}
           alt=""
         />
@@ -111,7 +111,7 @@ const ExploreCard = ({
           </div>
         ) : (
           <div>
-            <div className='font-semibold text-lg'>{formatEventDate(new Date(endDate).toLocaleDateString())}</div>
+            <div className='font-semibold text-lg'>{formatEventDate(new Date(endDate))}</div>
           </div>
         )}
 

@@ -77,7 +77,7 @@ const ChallengeDetails = () => {
       <div className='relative bg-[#003145] sm:min-h-[419px] min-h-[550px] font-inter lmd:px-32 lsm:px-20 px-10 pt-[6.5rem]'>
         <div className='max-w-[818px] sm:min-h-[240px] min-h-[380px] flex flex-col justify-between'>
           <div>
-            {/* Dynamic event date display */}
+            
             <div className='lg:max-w-[300px] max-w-[300px] lg:h-[34px] h-[45px] rounded-[5px] bg-[#FFCE5C] flex justify-center items-center'>
               <p className='max-w-[371px] font-semibold text-sm leading-3 flex flex-col gap-2 lg:block'>
                 {formatEventDate(challengeDetails?.startDate, challengeDetails?.endDate)}
