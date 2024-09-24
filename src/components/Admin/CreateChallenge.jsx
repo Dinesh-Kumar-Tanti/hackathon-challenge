@@ -114,6 +114,7 @@ const CreateChallange = () => {
                             <label className='font-inter font-medium leading-[19px]' htmlFor="challange-name">Challenge Name</label>
                             <input className='rounded-md border-[1px] h-10 px-3' type="text"
                                 name="name"
+                                placeholder="Hackathon name..."
                                 onChange={handleChange}
                                 value={input.name}
                                 required
@@ -148,6 +149,7 @@ const CreateChallange = () => {
                         <label className='font-inter font-medium leading-[19px]' htmlFor="description">Description</label>
                         <textarea className='rounded-md border-[1px] sm:w-[453px]  lg:w-[817px] lsm:w-[455px] h-[292px] p-3'
                             name="description"
+                            placeholder='Type hackathon details...'
                             onChange={handleChange}
                             value={input.description}
                             required
