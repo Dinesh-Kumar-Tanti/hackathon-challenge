@@ -14,7 +14,7 @@ export default function Filters() {
     };
 
     return (
-        <div className="bg-[#002A3B] h-[550px] lxsm:h-[500px] md:h-[420px] lg:h-[386px]">
+        <div className="bg-[#002A3B] ">
             <div className="max-w-[900px] mx-auto flex flex-col items-center lg:block mt-20">
                 <h1 className="text-center font-poppins font-semibold text-[28px] leading-[40px] text-white">Explore Challenges</h1>
                 <div className="flex flex-col gap-5 md:flex-row sm:justify-between sm:items-center mt-16">

@@ -52,7 +52,7 @@ else if(type==="level"){
 
 
     return (
-        <div className='flex justify-center flex-wrap lg:flex-nowrap md:justify-start gap-5 mt-10 px-5 sm:w-[600px] lg:w-full'>
+        <div className='flex justify-center flex-wrap lg:flex-nowrap md:justify-start gap-5 mt-10 px-5 pb-14 sm:w-[600px] lg:w-full'>
             {
                 allFilters.map((pill, i)=>(
                     <p key={i} className='h-10 rounded-[30px] capitalize px-5 text-sm leading-[14px] font-medium font-poppins bg-[#F8F9FD7D] text-white flex items-center gap-2' >{pill.label}<button onClick={()=>onRemoveFilter(pill.label,pill.type)}> <img className=' min-w-[14px] h-[14px] filter invert' src="/assets/icons/close.png" alt="close pill"/> </button></p> 
