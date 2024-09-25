@@ -3,7 +3,7 @@ import { getAllChallenges } from '../../utils/dataStore';
 import imageToBase64 from 'image-to-base64/browser';
 import { formatDate, addOneDay } from '../../utils/dateUtils';
 import useChallengeDetails from '../../hooks/UseChallengeDetails';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const CreateChallange = () => {
     const { challengeDetails } = useChallengeDetails();
@@ -16,6 +16,11 @@ const CreateChallange = () => {
         image: "",
         level: "Easy"
     });
+
+    const navigate = useNavigate();
+    const [showPopup, setShowPopup] = useState(false);
+    const [progress, setProgress] = useState(0);
+    const [popupMessage, setPopupMessage] = useState('');
 
     const getCurrentDate = () => {
         return Date.now().toString();
@@ -61,7 +66,7 @@ const CreateChallange = () => {
 
             setFormData(updatedChallenges);
             localStorage.setItem('challenge', JSON.stringify(updatedChallenges));
-            window.alert('Challenge updated successfully!');
+            triggerPopup('Challenge updated successfully!');
         } else {
             const newChallenge = {
                 id: getCurrentDate(),
@@ -71,7 +76,7 @@ const CreateChallange = () => {
             const localData = [newChallenge, ...formData];
             setFormData(localData);
             localStorage.setItem('challenge', JSON.stringify(localData));
-            window.alert('Challenge created successfully!');
+            triggerPopup('Challenge created successfully!');
         }
 
         setInput({
@@ -102,8 +107,42 @@ const CreateChallange = () => {
         setStartDate(e.target.value);
     };
 
+    const triggerPopup = (message) => {
+        setPopupMessage(message);
+        setShowPopup(true);
+        setProgress(0);
+
+        // Start the progress bar
+        let progressValue = 0;
+        const interval = setInterval(() => {
+            progressValue += 1;
+            setProgress(progressValue);
+            if (progressValue === 100) {
+                clearInterval(interval);
+            }
+        }, 30); // 30ms * 100 = 3000ms (3 seconds)
+
+        // Hide the popup and navigate after 3 seconds
+        setTimeout(() => {
+            setShowPopup(false);
+            navigate('/');
+        }, 3000);
+    };
+
     return (
         <div className='mb-10'>
+            {showPopup && (
+                <div className="fixed top-10 left-1/2 transform -translate-x-1/2 bg-green-500 text-white p-4 rounded shadow-lg z-50">
+                    {popupMessage}
+                    <div className="relative mt-2 h-1 bg-white w-full">
+                        <div
+                            className="absolute left-0 top-0 h-full bg-green-700"
+                            style={{ width: `${progress}%` }}
+                        ></div>
+                    </div>
+                </div>
+            )}
+
             <div className='relative flex items-center pl-[50px] sm:pl-[90px] h-[107px] font-inter font-bold text-2xl leading-[29px] bg-[#F8F9FD]'>
                 Challenge Details <span className='absolute invisible sm:visible sm:right-10 md:right-24 xlg:right-40'><Link to='/'><button className=' flex items-center gap-5 border-[2px] px-5 py-3 rounded-[10px] text-slate-600 text-xl hover:bg-slate-200'><img className='w-5 h-5' src="/assets/icons/arrow.png" alt="" />Go Back</button></Link></span>
             </div>
@@ -163,12 +202,10 @@ const CreateChallange = () => {
                             type="file" accept="image/*"
                             name="image"
                             onChange={onFileUpload}
-                            // Only apply "required" when creating a new challenge (no challengeDetails)
                             required={!challengeDetails}
                         />
                         {input.image && <img className="w-[354px] h-[174px] object-cover rounded-t-[8px]" src={`data:image/png;base64, ${input.image}`} alt="" />}
                     </div>
-
 
                     <div className='mt-10 flex flex-col gap-5'>
                         <label className='font-inter font-medium leading-[19px]' htmlFor="level">Level Type</label>
@@ -185,7 +222,6 @@ const CreateChallange = () => {
                         </select>
                     </div>
 
-                    {/* Conditionally render Create or Update button */}
                     <button type='submit' className='my-16 bg-[#44924C] hover:bg-green-700 text-white w-[214px] h-[46px] rounded-[10px] px-[18px] py-[6px] font-medium text-[18px] text-center leading-5'>
                         {challengeDetails ? 'Update Challenge' : 'Create Challenge'}
                     </button>
