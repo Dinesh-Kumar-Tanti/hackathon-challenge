@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-import { timeLeft } from "../../../../utils/dateUtils";
+import { timeLeft, formatEventDate } from "../../../../utils/dateUtils";
+
 
 const ExploreCard = ({
   id,
@@ -34,37 +35,6 @@ const ExploreCard = ({
     };
   }, [startDate, endDate, isUpcoming]);
 
-
-  function formatEventDate(dateString) {
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-    const date = new Date(dateString);
-    const today = new Date();
-
-    const day = date.getDate();
-    const month = months[date.getMonth()];
-    const year = date.getFullYear().toString().slice(-2); 
-
-    const daySuffix = (day) => {
-      if (day > 3 && day < 21) return 'th'; 
-      switch (day % 10) {
-        case 1: return 'st';
-        case 2: return 'nd';
-        case 3: return 'rd';
-        default: return 'th';
-      }
-    };
-
-    const formattedDate = `${day}${daySuffix(day)} ${month}'${year}`;
-
-    if (date < today) {
-      return `Ended on ${formattedDate}`;
-    } else if (date.toDateString() === today.toDateString()) {
-      return `Started today`;
-    } else {
-      return `Starts on ${formattedDate}`;
-    }
-  }
 
   const getBackgroundColor = () => {
     if (isActive) return 'bg-[#44924C3D] text-[#44924C] ' 

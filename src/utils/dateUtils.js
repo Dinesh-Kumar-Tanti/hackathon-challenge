@@ -41,3 +41,35 @@ export function timeLeft(eventDate) {
         minutes,
     };
 }
+
+
+export function formatEventDate(dateString) {
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    const date = new Date(dateString);
+    const today = new Date();
+
+    const day = date.getDate();
+    const month = months[date.getMonth()];
+    const year = date.getFullYear().toString().slice(-2); 
+
+    const daySuffix = (day) => {
+      if (day > 3 && day < 21) return 'th'; 
+      switch (day % 10) {
+        case 1: return 'st';
+        case 2: return 'nd';
+        case 3: return 'rd';
+        default: return 'th';
+      }
+    };
+
+    const formattedDate = `${day}${daySuffix(day)} ${month}'${year}`;
+
+    if (date < today) {
+      return `Ended on ${formattedDate}`;
+    } else if (date.toDateString() === today.toDateString()) {
+      return `Started today`;
+    } else {
+      return `Starts on ${formattedDate}`;
+    }
+  }

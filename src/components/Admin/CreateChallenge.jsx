@@ -198,7 +198,7 @@ const CreateChallange = () => {
                     <div className='mt-10 flex flex-col gap-5'>
                         <label className='font-inter font-medium leading-[19px]' htmlFor="image">Image</label>
                         <input
-                            className='rounded-[5px] border-[1px] h-[39px] w-[232px]'
+                            className='rounded-[5px] border-[1px] h-[39px] w-[232px] pt-1 pl-1'
                             type="file" accept="image/*"
                             name="image"
                             onChange={onFileUpload}
