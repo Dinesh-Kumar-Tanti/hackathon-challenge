@@ -223,7 +223,7 @@ const CreateChallange = () => {
                     </div>
 
                     <button type='submit' className='my-16 bg-[#44924C] hover:bg-green-700 text-white w-[214px] h-[46px] rounded-[10px] px-[18px] py-[6px] font-medium text-[18px] text-center leading-5'>
-                        {challengeDetails ? 'Update Challenge' : 'Create Challenge'}
+                        {challengeDetails ? 'Save Changes' : 'Create Challenge'}
                     </button>
                 </form>
             </div>
