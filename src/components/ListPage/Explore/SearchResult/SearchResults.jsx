@@ -4,7 +4,7 @@ import { SearchAndFilterContext } from '../../../../context/SearchAndFilterConte
 
 export default function SearchResults() {
     const { filteredChallenges } = useContext(SearchAndFilterContext);
-console.log(filteredChallenges)
+// console.log(filteredChallenges)
     return (
         
         <div className='bg-[#003145]'>            

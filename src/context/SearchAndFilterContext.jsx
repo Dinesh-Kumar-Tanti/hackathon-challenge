@@ -40,6 +40,8 @@ export const SearchandFilterProvider = ({ children }) => {
             keyName = 'status';
             filterConfig = EVENT_TYPE;
         }
+        // export const LEVEL_TYPE = ['easy', 'medium', 'hard'];
+
         return filterConfig.indexOf(a[keyName]?.toLowerCase?.()) - filterConfig.indexOf(b[keyName]?.toLowerCase?.());
     });
 
@@ -87,6 +89,7 @@ export const SearchandFilterProvider = ({ children }) => {
         ...oldFilter,
         status: [...oldFilter.status, value],
       }));
+      return;
     }
 
     // filter -> value exists in filters.date and checked is false -> remove value from filters.date
@@ -95,6 +98,7 @@ export const SearchandFilterProvider = ({ children }) => {
         ...oldFilter,
         status: oldFilter.status.filter((item) => item !== value),
       }));
+      return;
     }
   }
 

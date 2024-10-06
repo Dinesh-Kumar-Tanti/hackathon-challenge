@@ -16,7 +16,7 @@ export default function useChallengeDetails() {
                 setChallengeDetails(challengeDetails);
             }
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        
     }, [challengeId]);
 
     return { challengeDetails };

@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const ChallengeDetails = () => {
   const { challengeDetails } = useChallengeDetails();
-  const navigate = useNavigate(); // useNavigate instead of useHistory
+  const navigate = useNavigate(); 
 
   // Helper function to format dates
   function formatEventDate(startDateString, endDateString) {

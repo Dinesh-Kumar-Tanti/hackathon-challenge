@@ -30,8 +30,20 @@ const CreateChallange = () => {
         if (challengeDetails) {
             if (challengeDetails.status === 'past') {
                 window.alert('Cannot modify a past event!');
+                navigate('/');
                 return;
             }
+            // if(challengeDetails.status === 'active' && challengeDetails.startDate<currentDate){
+                // setInput({
+                //     name: challengeDetails?.name,
+                //     startDate: challengeDetails?.startDate,
+                //     endDate: challengeDetails?.endDate,
+                //     description: challengeDetails?.description,
+                //     image: challengeDetails?.image,
+                //     level: challengeDetails?.level
+                // });
+            // }
+
             setInput({
                 name: challengeDetails?.name,
                 startDate: challengeDetails?.startDate,
@@ -169,6 +181,7 @@ const CreateChallange = () => {
                                 onChange={handleChange}
                                 value={input.startDate}
                                 required
+                                disabled={challengeDetails && challengeDetails.status === 'active' && input.startDate < currentDate}
                             />
                         </div>
                         <div className='flex flex-col gap-5'>
